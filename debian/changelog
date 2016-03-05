@@ -1,0 +1,215 @@
+python-cryptography (1.2.3-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sat, 05 Mar 2016 05:40:58 +0200
+
+python-cryptography (1.2.2-3) unstable; urgency=medium
+
+  * Add autopkgtest and support "nocheck" profile.
+  * Bump Standards-Version to 3.9.7 (no changes).
+  * Turn on "bindnow" hardening option.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Mon, 22 Feb 2016 02:29:44 +0200
+
+python-cryptography (1.2.2-2) unstable; urgency=medium
+
+  * Import a0bef9dfde0e94bd1a01db1b4fa51632ac842ee7 from upstream: fixes
+    memory corruption in test suite (probably only affects 32-bit
+    architectures).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Mon, 08 Feb 2016 20:44:24 +0200
+
+python-cryptography (1.2.2-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Switch to https in Vcs-Git.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Thu, 04 Feb 2016 07:28:12 +0200
+
+python-cryptography (1.2.1-1) unstable; urgency=medium
+
+  * New upstream version.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sat, 23 Jan 2016 04:19:44 +0200
+
+python-cryptography (1.1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Tue, 24 Nov 2015 22:52:31 +0200
+
+python-cryptography (1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Add new testing dependencies (pyasn1_modules and hypothesis).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Thu, 29 Oct 2015 09:13:24 +0200
+
+python-cryptography (1.0.2-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Fix a potential security issue when running Python in -O mode.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Mon, 28 Sep 2015 06:36:07 +0200
+
+python-cryptography (1.0.1-4) unstable; urgency=medium
+
+  * Remove cffi from requires.txt after dh_python[23] runs
+    (closes: #799628).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Mon, 21 Sep 2015 01:28:46 +0200
+
+python-cryptography (1.0.1-3) unstable; urgency=medium
+
+  * Drop cffi pydist overrides, as cffi now ships pydist files which are
+    important not to override due to ABI versioning.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sat, 19 Sep 2015 00:23:26 +0200
+
+python-cryptography (1.0.1-2) unstable; urgency=medium
+
+  * Fix build-dependencies and pydist-overrides to make sure the correct
+    versioned dependencies are used everywhere (closes: #799077).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Thu, 17 Sep 2015 16:35:29 +0200
+
+python-cryptography (1.0.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Wed, 09 Sep 2015 12:31:22 +0200
+
+python-cryptography (1.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sun, 30 Aug 2015 01:42:07 +0200
+
+python-cryptography (1.0-1) experimental; urgency=medium
+
+  * New upstream release.
+    - Requires at least cffi 1.1.
+  * Ship pydist files for cryptography.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Thu, 13 Aug 2015 10:18:48 +0200
+
+python-cryptography (0.9.3-1) unstable; urgency=low
+
+  * New upstream release (closes: #789768).
+  * Drop unneeded python3-enum34 dependency (Python versions earlier than
+    3.4 were dropped in jessie; restore this dependency if backporting to
+    wheezy or before; closes: #793615).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sun, 26 Jul 2015 13:04:14 +0200
+
+python-cryptography (0.8.2-3) unstable; urgency=medium
+
+  * Add needs-root for autopkgtest (via patch from Matthias Klose in
+    Ubuntu).
+  * Remove unnecessary versioned build-depends.
+  * Remove unnecessary control field prefixes.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Tue, 12 May 2015 15:09:49 +0200
+
+python-cryptography (0.8.2-2) unstable; urgency=medium
+
+  * Reupload to unstable (no changes, closes: #783585).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Tue, 28 Apr 2015 16:30:16 +0200
+
+python-cryptography (0.8.2-1) experimental; urgency=low
+
+  * New upstream release.
+    - Fixed a race condition when initializing the OpenSSL or CommonCrypto
+      backends in a multi-threaded scenario.
+  * Relax libssl-dev dependency as all versions currently in Debian should
+    be compatible (closes: #780715).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sat, 11 Apr 2015 04:01:24 +0200
+
+python-cryptography (0.8-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Mon, 09 Mar 2015 01:58:33 +0200
+
+python-cryptography (0.7.2-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Fri, 16 Jan 2015 16:19:19 +0200
+
+python-cryptography (0.7.1-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Mon, 29 Dec 2014 03:53:14 +0200
+
+python-cryptography (0.7-1) experimental; urgency=medium
+
+  * New upstream release.
+    - Fix FTBFS with OpenSSL in experimental due to missing SSL3
+      support (closes: #772842).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Thu, 18 Dec 2014 16:36:42 +0200
+
+python-cryptography (0.6.1-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Fixes FTBFS with OpenSSL 1.0.1j caused by API change (closes: #765544).
+    - No other upstream changes that affect Debian.
+  * Bump Standard-Version to 3.9.6 (no changes).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Thu, 16 Oct 2014 06:45:38 +0200
+
+python-cryptography (0.6-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Copy .egg-info into build directory so entry points can be found by the
+      tests.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Tue, 30 Sep 2014 06:33:34 +0200
+
+python-cryptography (0.5.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Thu, 21 Aug 2014 19:45:02 +0200
+
+python-cryptography (0.5.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Add python{,3}-cryptography-vectors to Suggests.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sun, 27 Jul 2014 18:07:42 +0200
+
+python-cryptography (0.4-2) unstable; urgency=medium
+
+  * Enable test suite at build time.
+  * Enable test suite via autopkgtest.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Mon, 16 Jun 2014 21:29:23 +0200
+
+python-cryptography (0.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sat, 03 May 2014 18:00:14 +0200
+
+python-cryptography (0.3-1) unstable; urgency=medium
+
+  * New upstream release.
+    - The test vectors are now in a separate top-level package (will be
+      packaged in a separate source package, see #742911).
+    - Upstream now ships their docs (the previous release was accidentally
+      missing the docs); these are placed in a new Debian package
+      python-cryptography-doc.
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sat, 29 Mar 2014 01:01:04 +0200
+
+python-cryptography (0.2-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #737356)
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Fri, 21 Feb 2014 18:36:35 +0200

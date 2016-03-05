@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+bindnow
+
+export PYBUILD_NAME=cryptography
+export PYBUILD_TEST_PYTEST=1
+export PYBUILD_TEST_ARGS={dir}/tests/
+export PYBUILD_BEFORE_TEST=cp -R {dir}/src/${PYBUILD_NAME}.egg-info {build_dir}
+export PYBUILD_AFTER_TEST=rm -r {build_dir}/.hypothesis
+
+
+%:
+	dh $@ --with python2,python3 --buildsystem=pybuild
+
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf cryptography/hazmat/bindings/__pycache__ \
+	       cryptography/hazmat/primitives/__pycache__
+
+
+override_dh_python2:
+	dh_python2
+	# Remove "cffi" from requires after dh_python has seen it (so that the
+	# pydist file takes effect), because it is not actually needed at
+	# runtime.
+	sed -i '/^cffi/d' \
+	    debian/python-cryptography/usr/lib/python*/dist-packages/cryptography*.egg-info/requires.txt
+
+
+override_dh_python3:
+	dh_python3
+	rm -rf debian/python3-cryptography/usr/lib/python3.?
+	# See comment in override_dh_python2
+	sed -i '/^cffi/d' \
+	    debian/python3-cryptography/usr/lib/python3/dist-packages/cryptography*.egg-info/requires.txt

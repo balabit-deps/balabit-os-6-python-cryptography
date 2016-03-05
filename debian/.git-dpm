@@ -1,0 +1,11 @@
+# see git-dpm(1) from git-dpm package
+90ba808bdb4207d2cddee127814c21ae3567950a
+90ba808bdb4207d2cddee127814c21ae3567950a
+b64d1e2164939b61713ec45c406c57429ce381d3
+b64d1e2164939b61713ec45c406c57429ce381d3
+python-cryptography_1.2.3.orig.tar.gz
+a8a8083e70875423bd72899ca99890b788189205
+373165
+debianTag="debian/%e%v"
+patchedTag="patched/%e%v"
+upstreamTag="upstream/%e%u"
