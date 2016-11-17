@@ -1,5 +1,6 @@
 Source: python-cryptography
-Maintainer: Tristan Seligmann <mithrandi@debian.org>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Tristan Seligmann <mithrandi@debian.org>
 Section: python
 Priority: optional
 Build-Depends:

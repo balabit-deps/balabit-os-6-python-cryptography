@@ -1,3 +1,13 @@
+python-cryptography (1.2.3-1ubuntu0.1) xenial-security; urgency=medium
+
+  * SECURITY UPDATE: HKDF might return an empty byte-string
+    - debian/patches/CVE-2016-9243.patch: fix short length handling in
+      src/cryptography/hazmat/primitives/kdf/hkdf.py, added test to
+      tests/hazmat/primitives/test_hkdf.py.
+    - CVE-2016-9243
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Thu, 17 Nov 2016 10:20:34 -0500
+
 python-cryptography (1.2.3-1) unstable; urgency=medium
 
   * New upstream release.
