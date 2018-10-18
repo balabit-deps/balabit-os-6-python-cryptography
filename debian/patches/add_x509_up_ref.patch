@@ -1,0 +1,32 @@
+Backport of:
+
+From 4cc3b909bcf9e1dda67788c29c0c7770d2c67ffe Mon Sep 17 00:00:00 2001
+From: Paul Kehrer <paul.l.kehrer@gmail.com>
+Date: Wed, 29 Nov 2017 12:34:42 +0800
+Subject: [PATCH] add X509_up_ref (#4028)
+
+---
+ src/_cffi_src/openssl/x509.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+Index: python-cryptography-1.2.3/src/_cffi_src/openssl/x509.py
+===================================================================
+--- python-cryptography-1.2.3.orig/src/_cffi_src/openssl/x509.py	2018-10-18 07:17:41.948768700 -0400
++++ python-cryptography-1.2.3/src/_cffi_src/openssl/x509.py	2018-10-18 07:18:32.496806492 -0400
+@@ -122,6 +122,7 @@ X509 *X509_new(void);
+ void X509_free(X509 *);
+ X509 *X509_dup(X509 *);
+ int X509_cmp(const X509 *, const X509 *);
++int X509_up_ref(X509 *);
+ 
+ int X509_print_ex(BIO *, X509 *, unsigned long, unsigned long);
+ 
+@@ -375,4 +376,8 @@ X509_REVOKED *Cryptography_X509_REVOKED_
+     return ASN1_item_dup(ASN1_ITEM_rptr(X509_REVOKED), rev);
+ }
+ 
++int X509_up_ref(X509 *x) {
++   return CRYPTO_add(&x->references, 1, CRYPTO_LOCK_X509);
++}
++
+ """
