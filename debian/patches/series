@@ -1,3 +1,4 @@
 0001-Actually-allocate-a-buffer-that-is-the-correct-size.patch
 CVE-2016-9243.patch
 add_x509_up_ref.patch
+CVE-2020-25659.patch
